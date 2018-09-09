@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="NLog.Targets.SqlServerBulk.UnitTests.v3.ncrunchproject" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NLog.Targets.SqlServerBulk\NLog.Targets.SqlServerBulk.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NLog" Version="4.5.9" />
+    <PackageReference Include="NLog.Config" Version="4.5.9" />
+    <PackageReference Include="xunit" Version="2.4.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
+  </ItemGroup>
+</Project>

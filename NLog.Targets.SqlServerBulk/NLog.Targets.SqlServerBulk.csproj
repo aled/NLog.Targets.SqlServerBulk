@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NLog" Version="4.5.9" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.5.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="AdditionalColumn.cs" />
+    <Compile Remove="Sql\AdditionalColumnConfiguration.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="NLog.Targets.SqlServerBulk.v3.ncrunchproject" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sql\" />
+  </ItemGroup>
+</Project>
