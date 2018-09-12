@@ -24,13 +24,12 @@ namespace NLog.Targets.SqlServerBulk
                 bc.DestinationTableName = $"{schema.SqlQuote()}.{table.SqlQuote()}";
                 bc.BatchSize = batchSize;
                 bc.BulkCopyTimeout = 300; // TODO: make this configurable
+
                 foreach (DataColumn c in dataTable.Columns)
                     bc.ColumnMappings.Add(c.ColumnName, c.ColumnName);
 
                 bc.WriteToServer(dataTable);
             }
         }
-
-
     }
 }
