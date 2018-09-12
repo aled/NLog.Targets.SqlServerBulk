@@ -60,8 +60,8 @@ namespace NLog.Targets.SqlServerBulk.Sql
                 if (DefaultValue != null)
                     sb.Append($"DEFAULT({DefaultValue}) ");
 
-            if (IsNullable)
-                sb.Append("NULL ");
+            if (!IsNullable)
+                sb.Append("NOT NULL ");
 
             if (IsPrimaryKey)
                 sb.Append("PRIMARY KEY ");

@@ -41,7 +41,7 @@ namespace NLog.Targets.SqlServerBulk.UnitTests
                 "                 AND TABLE_NAME = @TableName\n" +
                 "                 AND TABLE_TYPE = 'BASE TABLE')\n" +
                 "  CREATE TABLE [dbo].[Log] (\n" +
-                "    [Message] NVARCHAR(10) NULL)\n",
+                "    [Message] NVARCHAR(10))\n",
 
                 "PARAMETER: @SchemaName=(String)dbo",
 
@@ -95,10 +95,10 @@ namespace NLog.Targets.SqlServerBulk.UnitTests
                 "                 AND TABLE_NAME = @TableName\n" +
                 "                 AND TABLE_TYPE = 'BASE TABLE')\n" +
                 "  CREATE TABLE [dbo].[Log] (\n" +
-                "    [Id] BIGINT IDENTITY PRIMARY KEY,\n" +
-                "    [Uuid] UNIQUEIDENTIFIER DEFAULT(NEWID()),\n" +
-                "    [Timestamp] DATETIME2(6) DEFAULT(GETUTCDATE()),\n" +
-                "    [Message] NVARCHAR(10) NULL)\n",
+                "    [Id] BIGINT IDENTITY NOT NULL PRIMARY KEY,\n" +
+                "    [Uuid] UNIQUEIDENTIFIER DEFAULT(NEWID()) NOT NULL,\n" +
+                "    [Timestamp] DATETIME2(6) DEFAULT(GETUTCDATE()) NOT NULL,\n" +
+                "    [Message] NVARCHAR(10))\n",
 
                 "PARAMETER: @SchemaName=(String)dbo",
 
